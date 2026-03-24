@@ -50,6 +50,11 @@ model_list:
       model: nvidia_nim/nvidia-nemotron-4-340b-instruct
       api_key: os.environ/NVIDIA_NIM_API_KEY
 
+  - model_name: openai/gpt-oss-120b
+    litellm_params:
+      model: nvidia_nim/openai/gpt-oss-120b
+      api_key: os.environ/NVIDIA_NIM_API_KEY
+
   - model_name: kimi-k2-instruct
     litellm_params:
       model: nvidia_nim/moonshotai/kimi-k2-instruct

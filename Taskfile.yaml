@@ -2,9 +2,9 @@ version: '3'
 
 tasks:
   default:
-    desc: Default task - starts the services
+    desc: Show available commands
     cmds:
-      - task: up
+      - task --list
 
   up:
     desc: Start the services
@@ -20,3 +20,8 @@ tasks:
     desc: Stop the services and remove volumes
     cmds:
       - docker-compose down -v
+
+  logs:
+    desc: View logs (use -f to follow)
+    cmds:
+      - docker-compose logs {{.CLI_ARGS}}
