@@ -2,84 +2,27 @@
 # Uncomment and customize as needed
 
 model_list:
-  # OpenAI Models
-  - model_name: gpt-4
-    litellm_params:
-      model: gpt-4
-      api_key: os.environ/OPENAI_API_KEY
-
-  - model_name: gpt-3.5-turbo
-    litellm_params:
-      model: gpt-3.5-turbo
-      api_key: os.environ/OPENAI_API_KEY
-
-  # Anthropic Models
-  - model_name: claude-3-opus
-    litellm_params:
-      model: claude-3-opus-20240229
-      api_key: os.environ/ANTHROPIC_API_KEY
-
-  - model_name: claude-3-sonnet
-    litellm_params:
-      model: claude-3-sonnet-20240229
-      api_key: os.environ/ANTHROPIC_API_KEY
-
   # NVIDIA NIM Models
-  - model_name: meta-llama-3-8b-instruct
+  - model_name: nvidia_nim/openai/gpt-oss-20b
     litellm_params:
-      model: nvidia_nim/meta-llama-3-8b-instruct
+      model: nvidia_nim/openai/gpt-oss-20b
       api_key: os.environ/NVIDIA_NIM_API_KEY
 
-  - model_name: meta-llama-3-70b-instruct
-    litellm_params:
-      model: nvidia_nim/meta-llama-3-70b-instruct
-      api_key: os.environ/NVIDIA_NIM_API_KEY
-
-  - model_name: mistral-7b-instruct-v0.2
-    litellm_params:
-      model: nvidia_nim/mistral-7b-instruct-v0.2
-      api_key: os.environ/NVIDIA_NIM_API_KEY
-
-  - model_name: mistralai-mixtral-8x7b-instruct-v0.1
-    litellm_params:
-      model: nvidia_nim/mistralai-mixtral-8x7b-instruct-v0.1
-      api_key: os.environ/NVIDIA_NIM_API_KEY
-
-  - model_name: nvidia-nemotron-4-340b-instruct
-    litellm_params:
-      model: nvidia_nim/nvidia-nemotron-4-340b-instruct
-      api_key: os.environ/NVIDIA_NIM_API_KEY
-
-  - model_name: openai/gpt-oss-120b
+  - model_name: nvidia_nim/openai/gpt-oss-120b
     litellm_params:
       model: nvidia_nim/openai/gpt-oss-120b
       api_key: os.environ/NVIDIA_NIM_API_KEY
 
-  - model_name: kimi-k2-instruct
+  # OpenRouter Free Model
+  - model_name: openrouter-free
     litellm_params:
-      model: nvidia_nim/moonshotai/kimi-k2-instruct
-      api_key: os.environ/NVIDIA_NIM_API_KEY
+      model: openrouter/free
+      api_key: os.environ/OPENROUTER_API_KEY
 
-  # Azure OpenAI
-  - model_name: gpt-4-azure
+  # Gemini Model
+  - model_name: gemini-gemma-4-31b-it
     litellm_params:
-      model: azure/gpt-4
-      api_base: os.environ/AZURE_API_BASE
-      api_key: os.environ/AZURE_API_KEY
-      api_version: os.environ/AZURE_API_VERSION
-
-  # AWS Bedrock
-  - model_name: claude-bedrock
-    litellm_params:
-      model: bedrock/anthropic.claude-v2
-      aws_access_key_id: os.environ/AWS_ACCESS_KEY_ID
-      aws_secret_access_key: os.environ/AWS_SECRET_ACCESS_KEY
-      aws_region_name: os.environ/AWS_REGION_NAME
-
-  # Gemini (Google Gemini)
-  - model_name: gemini-2.5-flash
-    litellm_params:
-      model: gemini/gemini-2.5-flash
+      model: gemini/gemma-4-31b-it
       api_key: os.environ/GEMINI_API_KEY
 
 # Router settings
@@ -90,7 +33,7 @@ model_list:
 
 # General settings
 litellm_settings:
-  drop_params: true
+  drop_params: false
   set_verbose: false
   # json_logs: true
 
